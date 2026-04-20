@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 우선순위</title>
+  <style>
+    /* p{color:#f00;} */
+    /* 문서내의 모든 div태그를 선택 */
+    /* 우선순위는 동일요소에 동일속성 다른값으로 한 경우 조상의 값을 상속받아 적용됨
+    조상 동일속성, 본인 동일 속성 지정하면 본인 지정한 속성 적용
+    우선순위값이 높은 선택자가 우선
+    태그1, 클래스10, 아이디100, 인라인1000 */
+    .box p{color:dodgerblue !important} /*10+1*/
+    .title{color:#0f0} /*10*/
+    p{color:#0ff;} /*1*/
+    div{color:#f00;} /*1*/
+    div{color:#00f;} /*1*/
+    p{color:#000} /*1*/
+  </style>
+</head>
+<body>
+  <!-- p>lorem -->
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem sint delectus sit iste numquam vero, repellendus eius tenetur! Veniam aperiam molestias sit nesciunt, cumque nihil a dolorem accusantium quisquam ipsa!</p>
+  <!-- div.box>p+p.title -->
+  <div class="box">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, aspernatur?</p>
+    <p class="title" style="color:#86f"> <!--1000-->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, iusto!</p>
+  </div>
+</body>
+</html>
