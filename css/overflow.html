@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+  <style>
+    *{margin:0; padding:0;}
+    /* 요소(태그) 크기결정 -> boxmodel
+    boxmodel 
+    1.block: 줄바꿈이 생김, 너비는 부모로부터 오고(콘텐츠 영역만큼 사용) 높이는 자식으로부터(태그가 포함하고 있는 자식)
+    2.inline: 줄바꿈이 생기지 않음, 너비는 본인이 포함하고 있는 내용만큼, 너비와 높이를 지정할 수 없음
+    3.inline-block: 줄바꿈이 생기지 않음, 너비와 높이를 지정할 수 있음 */
+
+    /* 요소크기 계산법
+    - 수평크기
+    왼쪽여백 + 왼쪽테두리 + 왼쪽여백 + 요소내용(content,텍스트,태그) + 오른쪽여백 + 오른쪽테두리 + 오른쪽여백
+    - 수직크기
+    상단여백 + 상단테두리 + 상단여백 + 요소내용(content,텍스트,태그) + 하단여백 + 하단테두리 + 하단여백 */
+   
+    .box{
+      /* width/height를 어느 영역까지를 포함할지 결정 box-sizing 
+      box-sizing: content-box;
+      box-sizing: border-box;*/
+      /* 왼쪽여백 상하좌우 모두 20px */
+      background-color: #ccc; width: 300px; height: 150px;
+      /* pdding을 지정해도 .box요소의 크기변화 X */
+      padding: 20px; box-sizing: border-box;
+    }
+    body{margin: 50px;}
+  </style>
+</head>
+<body>
+  <!-- .box -->
+  <div class="box">연습</div>
+  <!-- .coverflow-exam -->
+  <div class="overflow-exam">
+    <h1>자식의 크기가 부모의 크기보다 클때</h1>
+
+    <!-- .box.box$*4>lorem15 -->
+    <div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi totam numquam saepe eaque iste enim!</div>
+    <div class="box box2">Quae aperiam repudiandae modi quas enim, porro aspernatur iure, voluptas vero, optio debitis eligendi atque!</div>
+    <div class="box box3">Praesentium esse dolores quos accusantium facilis, sapiente alias delectus, porro ab rerum, deleniti sunt laboriosam!</div>
+    <div class="box box4">Velit alias soluta adipisci laudantium nesciunt nobis dignissimos odit, eum veniam aperiam quo totam esse.</div>
+  </div>
+  <style>
+    .overflow-exam > .box{
+      height: 100px; 
+      /* height: auto;  */
+      border: 1px solid #000;
+      margin: 50px 0 10px 0; 
+    }
+    /* overflow: visible; */
+    .box1{overflow: auto;}
+    .box2{overflow: scroll;}
+    .box3{overflow: visible;}
+    /* 부모요소보다 넘치는 부분은 숨김 */
+    .box4{overflow: hidden;}
+  </style>
+  <div class="box box5">
+    <img src="../html/asset/logo.png" alt="">
+  </div>
+  <style>
+    .box5{
+      overflow-y: hidden;
+    }
+  </style>
+</body>
+</html>
