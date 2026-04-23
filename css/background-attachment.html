@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-attachment</title>
+  <style>
+    *{margin:0; padding:0;}
+    .box{
+      margin: 20px;
+      height: 100vh;
+      box-sizing: content-box;
+      /* width/height 계산법을 content 영역의 크기로 지정 */
+      box-sizing: border-box;
+      /* width/height 계산법을 border + padding + content 크기를 다 포함해서 지정 */
+      border: 10px dotted rgba(0,0,0,0.5);
+      padding: 20px;
+      background-color: #ff3;
+      font-size: 2em;
+      text-align: left;
+
+      background-image: url(images/frame.png);
+      background-repeat: no-repeat;
+      background-position: right top;
+    }
+    .box1{
+      width: 500px;
+      background-attachment: scroll;
+      /* background-attachment: scroll
+      배경이미지가 요소와 함께 스크롤*/
+      
+    }
+    .box2{
+      width: 80%;
+      background-attachment: fixed;
+      /* background-attachment: fixed; 
+      배경이 브라우저에 고정, 기준이 브라우저 */
+      background-position: left center;
+    }
+    .box3{
+      width: 10em;
+    }
+    .box4{
+      width: auto;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- .container-wrap>.box.box$*3{box$} -->
+  <div class="container-wrap">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>
