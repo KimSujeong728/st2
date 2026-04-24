@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오로라 메시 그라디언트</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+      color: white;
+      background-color: #06040f;
+    }
+
+    .exam {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .aurora-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 22% 38%, rgba(129, 242, 165, 0.55), transparent 25%),
+                  radial-gradient(circle at 80% 28%, rgba(245, 232, 80, 0.4), transparent 24%),
+                  radial-gradient(circle at 52% 64%, rgba(249, 103, 89, 0.33), transparent 28%),
+                  radial-gradient(circle at 60% 18%, rgba(231, 202, 14, 0.28), transparent 18%),
+                  radial-gradient(circle at 43% 25%, rgba(241, 36, 198, 0.28), transparent 20%),
+                  linear-gradient(135deg, rgba(4, 7, 18, 0.95), rgba(12, 5, 32, 0.85));
+      mix-blend-mode: screen;
+      filter: blur(16px);
+    }
+
+    .aurora-layer::before,
+    .aurora-layer::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 28% 18%, rgba(129, 242, 165, 0.18), transparent 18%),
+                  radial-gradient(circle at 74% 42%, rgba(255, 0, 255, 0.18), transparent 16%),
+                  radial-gradient(circle at 38% 76%, rgba(231, 202, 14, 0.14), transparent 22%);
+      transform: translateZ(0);
+    }
+
+    .aurora-layer::after {
+      background: radial-gradient(circle at 57% 32%, rgba(249, 103, 89, 0.18), transparent 20%),
+                  radial-gradient(circle at 18% 58%, rgba(255, 0, 255, 0.16), transparent 18%),
+                  radial-gradient(circle at 84% 70%, rgba(245, 232, 80, 0.14), transparent 24%);
+      filter: blur(20px);
+      opacity: 0.84;
+    }
+
+    .content {
+      position: relative;
+      max-width: 960px;
+      text-align: center;
+      z-index: 1;
+      padding: 3rem 2rem;
+    }
+
+    .content h1 {
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      text-shadow: 0 0 22px rgba(255, 255, 255, 0.2);
+    }
+
+    .content p {
+      font-size: clamp(1rem, 1.4vw, 1.45rem);
+      line-height: 1.8;
+      color: #f7f4ff;
+      text-shadow: 0 0 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-highlight {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <section class="exam">
+    <div class="aurora-layer"></div>
+    <div class="content">
+      <h1>aurora mesh</h1>
+      <p>오로라 컬러 팔레트로 구성된 정적인 메시 그라디언트 배경입니다. 텍스트는 배경과 분리되어 선명하게 유지됩니다.</p>
+      <span class="text-highlight">여기에 텍스트를 넣어주세요</span>
+    </div>
+  </section>
+</body>
+</html>
