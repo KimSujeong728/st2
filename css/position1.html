@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position1</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    .wrap{
+      width: 65%; min-height: 2000px;
+      margin: 0 auto;
+      background-color: #ccc;
+      padding: 30px;
+      border: 10px dashed #999;
+      position: relative;/*3번째 parent의 기준점이*/
+    }
+    .parent{
+      padding: 10px;
+    }
+    .parent:nth-child(1){
+      background-color: #f86;
+      position: static;
+      /* 기준 X */
+      /* 일반 흐름 레이어 기능이 없음 */
+      left: 150px; top:150px
+    }
+    .parent:nth-child(2){
+      background-color: #6f8;
+      position: relative;
+      /* 기준은 자신 */
+      /* 형제, 부모 레이아웃에 영향을 미치지 않음 */
+      left: 150px; top:150px;
+    }
+    .parent:nth-child(3){
+      background-color: #86f;
+      position: absolute;
+      /* 형제, 부모의 레이아웃에 영향을 줌. -> noraml flowx */
+      /* 부모 자식의 관계를 잃기때문에 부모가 해당요소의 높이를 인식하지 못함 */
+      /* 레이어 요소 z-index left/right/top/bottom을 지정하지 않으면 원래 자기 위치 */
+      left:0; top:0;
+    }
+    .parent:nth-child(4){
+      background-color: #68f;
+      position:fixed;
+      left:0; top:0;
+    }
+    .parent:nth-child(5){
+      background-color: #ff6;
+    }
+    .parent .child{
+      width: 50px; height: 50px;
+      padding: 10px;
+      position:absolute;
+      /* normal flow에서 벗어난다
+      즉 부모가 해당요소의 높이를 인식하지 못한다
+      기준요소는 가까운 조상부터 position이 설정된 요소(단 static은) */
+      left:0; right:0;
+    }
+    .parent .child:nth-child(1){
+      background-color: #fff;
+    }
+    .parent .child:nth-child(2){
+      background-color: #0dd;
+    }
+    .box{background-color: #dd0;}
+    .parent:nth-child(5){
+      position: static;
+    }
+    /* 요소의 위치 설정법을 지정하는  position */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .parent*5>.child*2>.box>{box$} -->
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box1</div>
+      </div>
+      <div class="child">
+        <div class="box">box2</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
