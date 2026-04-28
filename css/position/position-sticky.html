@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position sticky</title>
+  <style>
+    *{margin: 0; padding: 0;}
+  .section:nth-child(odd){
+    background-color: #68f;
+  } /*홀수*/
+  .section:nth-child(even){
+    background-color: #f68;
+  } /*짝수*/
+  .section-title,
+  .content-wrap{
+    width: 80%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  /* 부모에 overflow를 쓰면 position sticky 효과 작동이 안됨 */
+  /* .section{overflow: hidden;} */
+  .section .section-title{
+    background-color: #fff;
+    /* height: 50px; */
+    /* 한줄 텍스트를 수직기준 가운데로 오기 */
+    /* line-height: 50px; */
+    font-size: 2em;
+    padding: 1em 2em;
+    /* 브라우저 상단에 section이 보여지는 동안 상단에 title이 고정되고 싶을때(엑셀고정 비슷) */
+    position: sticky;
+    top: 0;
+  }
+  .section .content-wrap{
+    background-color: beige;
+    height: 110vh;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .section.section$*4>p.section-title+.content-wrap -->
+    <div class="section section1">
+      <p class="section-title">section1</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section2">
+      <p class="section-title">section2</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section3">
+      <p class="section-title">section3</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section4">
+      <p class="section-title">section4</p>
+      <div class="content-wrap"></div>
+    </div>
+  </div>
+</body>
+</html>
