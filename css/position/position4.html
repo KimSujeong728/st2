@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position 4 1줄 4단 상품, 상품카드 좋아요, 세일박스 이미지를 겹치게</title>
+  <style>
+    /* reset */
+    *{margin:0; padding:0;}
+    ol,ul{list-style: none;}
+    .wrap{
+      background-color: beige;
+      margin: 30px;
+    }
+
+    /* 상품카드 썸네일 */
+    /* .ec-base-product{}
+    .ec-base-product .prdList{}
+    .prdList li{}
+    .prdList li .prdList__item{}
+    .prdList li .prdList__item .thumbnail{}
+    .prdList__item .thumbnail img{}
+    .prdList__item .thumbnail .sale_box{}
+    .prdList__item .thumbnail .likebutton{} */
+    .ec-base-product{
+      
+    }
+    .ec-base-product .prdList{
+      background-color: #333;
+      border: 1px solid #f00;
+    }
+    /* float가 지정된 자식요소를 인식하지 못하는 문제해결을 위한 태그 */
+    .ec-base-product .prdList::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .prdList li{
+      float: left; /* nomal flow에서 벗어나 layout 효과 */
+      width: 25%;
+      /* 테스트용 border를 width에 포함하기 위해 */
+      box-sizing: border-box;
+      background-color: #cc0;
+      border: 1px solid #000;
+
+    }
+    .prdList li .prdList__item{}
+    .prdList li .prdList__item .thumbnail{
+      position: relative;
+    }
+    .prdList__item .thumbnail img{
+      opacity: 0.5;
+      /* 이미지를 부모의 콘텐츠 너비를 다 쓰면서 자동 조절하고 싶을 때*/
+      width: 100%;
+      display: block;
+    }
+    /* 그림의 오른쪽 위 */
+    .prdList__item .thumbnail .sale_box{
+      font-size: 2em;
+      padding: 10px;
+      right: 10px; top: 5px;
+      position: absolute; /* 조상인 .thumbnail에 position: relative;를 좌표 적용하여 배치 */
+    }
+    /* 그림의 왼쪽 위 */
+    .prdList__item .thumbnail .likebutton{
+      font-size: 2em;
+      padding: 10px;
+      left: 10px; top: 5px;
+      position: absolute; /* 조상인 .thumbnail에 position: relative;를 좌표 적용하여 배치 */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- float 단처리 레이아웃
+   position, left/right/top/bottom 요소를 배치 -->
+  <div class="wrap">
+    <!-- .ec-base-product -->
+    <div class="ec-base-product">
+      <!-- ul.prdList>li*6>div.prdList__item>.thumbnail>img+.sale_box+likeButton -->
+      <ul class="prdList">
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/test img.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likebutton">like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/test img.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likebutton">like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/test img.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likebutton">like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/test img.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likebutton">like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/test img.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likebutton">like</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="prdList__item">
+            <div class="thumbnail">
+              <img src="../images/test img.png" alt="">
+              <div class="sale_box">10%</div>
+              <div class="likebutton">like</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
