@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex1 수직 수평 가운데 정렬</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .visual-section{
+      display: flex;
+      background-color: #ffc;
+      box-sizing: border-box;
+      width: 100%; height: 100vh;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    .visual-section .text-wrap{
+      /* flex item */
+      background-color: #cff;
+      flex: none;
+      width: 50%;
+      min-width: 300px;
+      max-width: 500px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="visual-section">
+      <div class="text-wrap">
+        <div class="title">Title</div>
+        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quis, eum dolore beatae necessitatibus maxime quam natus autem non porro.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
