@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex2 flex컨테이너와 flex아이템</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .wrap{margin: 50px;}
+    .container{
+      /* padding: 1rem; */
+      background-color: #fccc;
+      box-sizing: border-box;
+    }
+    .item{
+      border: 1px solid #000;
+      box-sizing: border-box;
+    }
+    .flex{
+      /* overflow: auto; */
+      /* flex box(flex 컨테이너) */
+      display: flex;
+      /* 1. flex의 방향 설정 */
+      flex-direction: row;
+      /* flex-direction: row-reverse; */
+      /* flex-direction: column; */
+      /* flex-direction: column-reverse; */
+      /* 4. flex-wrap
+         만약에 item에 flex-shrin:0; flex-grow:0;을 설정했을 때
+         부모의 크기보다 넘쳐나는 item 줄바꿈 */
+      /* flex-wrap: nowrap; */
+      flex-wrap: wrap;
+      gap: 5px 10px;
+
+    }
+    /* flex 컨테이너의 직계자식은 flex item */
+    /* 3. flex item 주축크기 확장/축소를 결정 */
+    .flex .item{
+      /* width: 25%; */
+      /* calc(값1 - 값2) */
+      width: calc(25% - (10px * (4 - 1)) / 4);
+      /* 아이템을 부모의 공간에 맞게 확장해주는 개념 */
+      flex-grow: 0;
+      /* 아이템을 부모의 공간에 맞게 축소해주는 개념 */
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .container>.item*4>{item$} -->
+    <div class="container flex">
+      <div class="item">Lorem</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">Lorem</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>
