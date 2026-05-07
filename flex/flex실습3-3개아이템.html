@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex3-flex container</title>
+  <title>flex실습3 3개의 아이템- 양끝정렬+가운데</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- 
   1. flex 선언 container : 단이 될 요소의 부모
@@ -28,11 +28,18 @@
     #top_nav_box .top_mypage{width: 150px;} */
 
     /* flex */
-    /* .inner{}
-    #top_nav_box{}
-    #top_nav_box .top_logo{}
-    #top_nav_box .top_category{}
-    #top_nav_box .top_mypage{} */
+    .inner{
+      display: flex; /*자식들을 item으로 취급하기 위한 태그선언 */
+    }
+    #top_nav_box{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    /* #top_nav_box>div{} */
+    #top_nav_box .top_logo{width: 100px;}
+    #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+    #top_nav_box .top_mypage{width: 150px;}
   </style>
 </head>
 <body>

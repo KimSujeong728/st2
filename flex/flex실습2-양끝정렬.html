@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex3-flex container</title>
+  <title>flex 실습2 양끝정렬</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- 
   1. flex 선언 container : 단이 될 요소의 부모
@@ -14,6 +14,7 @@
   6. 여백관리 gap container margin item
   7. 정렬 container / item, margin -->
   <style>
+    
     /* 모양 */
     .inner{background-color: #ccc;}
     #top_nav_box{background-color: #fcc; box-sizing: border-box;}
@@ -28,9 +29,25 @@
     #top_nav_box .top_mypage{width: 150px;} */
 
     /* flex */
-    /* .inner{}
-    #top_nav_box{}
-    #top_nav_box .top_logo{}
+    .inner{
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      
+    }
+    #top_nav_box{
+      display: flex;
+      width: 100%;
+      flex-direction: row; /* 주축의 기준 */
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    #top_nav_box>div{
+      flex-grow: 0; /* 확장 */
+      flex-shrink: 1; /* 축소 */
+      flex-basis: auto; /* 부모의 크기, 높이를 따르겠다 */
+    }
+    /* #top_nav_box .top_logo{}
     #top_nav_box .top_category{}
     #top_nav_box .top_mypage{} */
   </style>
@@ -39,7 +56,6 @@
   <div class="inner">
    <div class="top_nav_box" id="top_nav_box">
     <div class="top_logo">로고</div>
-    <div class="top_category">카테고리</div>
     <div class="top_mypage">마이페이지</div>
   </div>
   <!-- //#top_nav_box -->

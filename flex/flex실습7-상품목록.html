@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex7-상품목록</title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- 
+  1. flex 선언 container : 단이 될 요소의 부모
+  2. flex의 방향을 결정 container : 주축과 교차축 결정, row가 기본값
+  3. 아이템의 축소/확장을 결정 item : 축소는 하지만 확장은 하지 않음?
+  4. 아이템의 크기결정 item
+  5. 아이템이 줄바꿈을 결정 container 
+  6. 여백관리 gap container margin item
+  7. 정렬 container / item, margin -->
+  <style>
+    /* 모양 */
+    .ec-base-product{background-color: #ccc;}
+    .ec-base-product .prdList{background-color: #fcc;}
+    .ec-base-product .prdList >li{
+      /* list-style: none; */
+      opacity: 0.5;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      background-color: #cff;
+      padding: 1rem;
+    }
+
+    /* flex */
+    .ec-base-product{
+      
+    }
+    .ec-base-product .prdList{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      
+    }
+    .ec-base-product .prdList >li{
+      /* flex-grow: 0; */
+      flex-shrink: 0;
+      flex-basis: auto;
+      /* width: 25%; */
+      width: calc(25% - (20px * (4 - 1) / 4));
+      aspect-ratio: 2/1;
+    }
+
+    /* tablet */
+    @media (max-width: 1024px){
+      .ec-base-product .prdList >li{
+        width: calc(33.33% - (20px * (3 - 1) / 3));
+      }
+    }
+    /* mobile */
+    @media (max-width: 768px){
+      .ec-base-product .prdList >li{
+        width: calc(50% - (20px * (2 - 1) / 2));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ec-base-product">
+    <ul class="prdList">
+      <li>아이템1</li>
+      <li>아이템2</li>
+      <li>아이템3</li>
+      <li>아이템4</li>
+      <li>아이템5</li>
+      <li>아이템6</li>
+      <li>아이템7</li>
+      <li>아이템8</li>
+    </ul>
+  </div>
+</body>
+</html>
