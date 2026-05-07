@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex3-flex container</title>
+  <title>flex6 column 방향과 position</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- 
   1. flex 선언 container : 단이 될 요소의 부모
@@ -28,11 +28,23 @@
     #top_nav_box .top_mypage{width: 150px;} */
 
     /* flex */
-    /* .inner{}
-    #top_nav_box{}
-    #top_nav_box .top_logo{}
-    #top_nav_box .top_category{}
-    #top_nav_box .top_mypage{} */
+    /* .inner{} */
+    #top_nav_box{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;/* 주축 */
+      align-content: flex-start; /* 교차축 */
+      align-items: center;
+      position: relative;
+      
+    }
+    #top_nav_box .top_logo{width: 100px;}
+    #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+    #top_nav_box .top_mypage{
+      width: 150px;
+      position: absolute;
+      right: 0; bottom: 0;
+    }
   </style>
 </head>
 <body>
