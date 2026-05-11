@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gird3 정렬 배치</title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- 
+  1. container에게 grid선언 (container)
+  2. 행열 줄칸 갯수, 크기 (container)
+  3. 암시적 그리드선언(생략가능) (container)
+  4. 아이템배치(item)(생략 한줄 한칸)
+  5. 여백 gap(container), margin(item)
+  6. 정렬 -->
+
+  <style>
+    .wrap{
+      margin: 50px;
+    }
+    .grid-container{
+      background-color: #ccc;
+      min-height: 500px;
+    }
+    .grid-container .item{
+      background-color: dodgerblue;
+      box-sizing: border-box;
+      border: 1px solid magenta;
+    }
+    /* grid */
+    .grid-container{
+      display: grid;
+      /* 정렬을 위해서 컨테이너보다 아이템의 합이 컨테이너보다 작게 지정했음 */
+      grid-template-rows: repeat(3, 100px);
+      grid-template-columns: repeat(3, 30%);
+      /* 컨테이너 안에서 아이템의 정렬과 배치 */
+      /* 수평정렬/배치 */
+      justify-content: start;
+      /* 요소사이 여백 간격, 양끝정렬 */
+      justify-content: space-evenly;
+      /* 정렬/배치 기본값 */
+      justify-content: normal;
+      /* block축에 해당되는 크기를 지정하지 않으면 stretch, 지정하면 star로 인식
+      grid-template-rows: repeat(3, 100px); */
+      align-content: normal;
+      align-content: end;
+      
+      /* justify, align 값이 between 일땐 앞에서 설정했던 여백이 무시됨 */
+      justify-items: center;
+      align-items: center;
+    }
+
+    /* grid item */
+    .grid-container .item{
+    }
+    .grid-container .item:nth-child(1){
+      /* grid 영역안에서 정렬 */
+      justify-self: start;
+      align-self: start;
+      
+    }
+    .grid-container .item:nth-child(2){
+      
+    }
+    .grid-container .item:nth-child(3){
+      
+    }
+    .grid-container .item:nth-child(4){
+      
+    }
+    .grid-container .item:nth-child(5){
+      
+    }
+    .grid-container .item:nth-child(5){
+      
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid-container">
+      <div class="item">아이템1</div>
+      <div class="item">아이템2</div>
+      <div class="item">아이템3</div>
+      <div class="item">아이템4</div>
+      <div class="item">아이템5</div>
+      <div class="item">아이템6</div>
+      <div class="item">아이템7</div>
+      <div class="item">아이템8</div>
+    </div>
+  </div>
+</body>
+</html>
