@@ -29,9 +29,16 @@
     width: 100%;
   }
   .visual-section .swiper {
-  width: 100%;
-  background-color: #f00;
+    width: 100%;
+    background-color: #f00;
   }
+  .visual-section  .swiper-horizontal>.swiper-pagination-bullets, 
+      .visual-section  .swiper-pagination-bullets.swiper-pagination-horizontal, 
+      .visual-section  .swiper-pagination-custom, 
+      .visual-section  .swiper-pagination-fraction{
+        bottom:24px;
+      }
+
   .visual-section .swpter .swiper-pagination-bullet{
     background: transparent;
     height: 12px; width: 12px;
@@ -47,6 +54,31 @@
     background-color: #fff;
     opacity: 0.8;
   }
+  .visual-section .swiper-button-next,
+  .visual-section .swiper-button-prev{
+    color: #fff;
+    box-shadow: 0px 0px 4px #000;
+    padding: 1rem 0.5rem;
+    opacity: 0.5;
+    transform: translateY(-50%);
+  }
+  .visual-section .swiper-button-next:hover,
+  .visual-section .swiper-button-prev:hover{
+    opacity: 1;
+  }
+
+  .visual-section .swiper-button-next{
+    right: 50px;
+    left: auto;
+  }
+  .visual-section .swiper-button-prev{
+    left: 50px;
+    right: auto;
+  }
+  .visual-section .swiper-scrollbar.swiper-scrollbar-horizontal{
+    bottom: 0;
+  }
+    
 
 </style>
 </head>
@@ -72,7 +104,6 @@
           <img src="../css/images/smartbanner-01-03-pc.png" alt="">
         </a>
       </div>
-      ...
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -91,7 +122,14 @@
   const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
+  // 무한반복
   loop: true,
+  
+  // autoplay
+  autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+  },
 
   // If we need pagination
   pagination: {
