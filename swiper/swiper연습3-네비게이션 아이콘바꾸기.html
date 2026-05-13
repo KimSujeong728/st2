@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper기본</title>
+  <title>swiper연습3-네비게이션 아이콘바 바꾸기</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- swiperjs css -->
   <link
@@ -41,7 +41,7 @@
   <div class="swiper-scrollbar"></div>
 </div>
 <script>
-  const swiper = new Swiper('.swiper1', {
+  const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
@@ -49,12 +49,14 @@
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable:true,
   },
 
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+    addIcons:false,
   },
 
   // And if we need scrollbar
