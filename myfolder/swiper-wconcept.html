@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper연습2-wconcept</title>
+  <title>swiper-wconcept</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- swiperjs css -->
   <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  href="css/swiper.min.css"
 />
 <!-- swiperjs 스크립설치 -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
 <style>
   /* 슬라이드의 위치를 확인 */
   .visual-section .swiper-slide {
@@ -37,6 +37,10 @@
   overflow: visible;
   width: 92%;
   max-width: 1420px;
+  /* cafe24 swiper css버전 추가 변경 */
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 .visual-section .swiper-wrapper{
@@ -73,8 +77,8 @@
     opacity: 50%;
     bottom: var(--swiper-control-position-bottom);
     transform: translate(0,50%);
-
   }
+  
   .visual-section .swiper-button>div{
     /* position absolute를 무력화하고 싶을때 */
     position: static;
@@ -83,20 +87,22 @@
     width: 24px;
     height: 33px;
     position: relative;
+    left: auto; right: auto; top: auto; bottom: auto;
   }
   .visual-section .swiper-button .swiper-button-prev,
   .visual-section .swiper-button .swiper-button-next{
     padding-left: 10px;
     padding-right: 10px;
+    background-image: none;
   }
   .visual-section .swiper-button .swiper-button-prev::after{
     content: "";
     display: block;
     width: 2px;
-    height: 60%;
+    height: 50%;
     background-color: #ccc;
     position: absolute;
-    right: 0; top: 50%;
+    right: -3px; top: 43%;
     transform: translate(0,-50%);
   }
 
@@ -108,6 +114,30 @@
   }
   .visual-section .swiper-button .swiper-button-next > img{
     transform: rotate(180deg);
+  }
+  .visual-section .swiper-button .swiper-button-play-toggle{}
+  .visual-section .swiper-button .swiper-button-play-toggle>span{
+    display: block;
+    padding-left: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* box-sizing: border-box; */
+    /* border: 1px solid #000; */
+    overflow: hidden
+  }
+  .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
+    background-image: url(imeges/pause_48dp.png);
+    /* background-repeat: no-repeat; */
+  }
+  .visual-section .swiper-button .swiper-button-play-toggle .icon-play{
+    background-image: url(imeges/play_arrow_48dp.png);
+    /* background-repeat: no-repeat; */
+  }
+  /* .is-play : pause표시
+     .is-pause : play표시 */
+  .visual-section .swiper-button .swiper-button-play-toggle.is-pause .icon-pause,
+  .visual-section .swiper-button .swiper-button-play-toggle.is-play .icon-play{
+    display: none;
   }
 
 </style>
@@ -166,7 +196,11 @@
         <img src="imeges/arrow_back_ios_48.png" alt="다음 슬라이드로 이동">
       </div>
       <!-- play버튼과 pause 버튼이 올거에요 -->
-      <div>버튼</div>
+      <!-- <div>버튼</div> -->
+      <div class="swiper-button-play-toggle is-play">
+      <span id="icon-pause" class="icon-pause">pause</span>
+      <span id="icon-play" class="icon-play">play</span>
+      </div>
     </div>
     <!-- //.swiper-button -->
   
@@ -174,36 +208,8 @@
     <!-- <div class="swiper-scrollbar"></div> -->
   </div> <!-- //.swiper -->
 </div> <!-- //.visual-section -->
-<script>
-  const swiper = new Swiper('.swiper1', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  centeredSlides: true,
-  slidesPerView: 3,
-  spaceBetween: 20,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    type: "progressbar",
-    clickable:true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    addIcons:false,
-  },
-
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  //   clickable: true,
-  // },
-});
-</script>
-
+<!-- 외부 myscript.js에서 Swiper 초기화 및 재생/정지 토글을 처리합니다 -->
+<script src="/myfolder/js/myscript.js" defer></script>
 </body>
 </html>
