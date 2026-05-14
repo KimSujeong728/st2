@@ -60,9 +60,9 @@
   .visual-section .swiper-button{
     position: absolute;
     right: 0px;
-    opacity: 30%;
+    opacity: 0.8;
     bottom: var(--swiper-control-position-bottom);
-    transform: translate(0,50%);
+    transform: translate(0, 65%);
   }
   
   .visual-section .swiper-button>div{
@@ -73,7 +73,7 @@
     width: 24px;
     height: 33px;
     position: relative;
-    left: auto; right: auto; bottom: auto;
+    left: auto; right: auto; bottom: -15px
   }
   .visual-section .swiper-button .swiper-button-prev,
   .visual-section .swiper-button .swiper-button-next{
@@ -89,7 +89,7 @@
     background-color: #ccc;
     position: absolute;
     right: -3px; top: 43%;
-    transform: translate(0,-50%);
+    transform: translate(0,-60%);
   }
 
   .visual-section .swiper-button .swiper-button-prev > img,
@@ -109,7 +109,8 @@
     background-size: contain;
     /* box-sizing: border-box; */
     /* border: 1px solid #000; */
-    overflow: hidden
+    overflow: hidden;
+    transform: translate(0,-75%);
   }
   .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
     background-image: url(/myfolder/imeges/pause_48dp.png);
