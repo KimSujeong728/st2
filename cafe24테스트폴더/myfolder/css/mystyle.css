@@ -27,6 +27,7 @@
 .dan-section .item{
   /* flex: none; */ 
 }
+/* 썸네일의 크기가 달라지는 오류가 생김 */
 /* .dan-section .item:first-child{padding-left: 0;} */
 /* .dan-section .item:last-child{padding-right: 0;} */
 
@@ -36,5 +37,30 @@
   padding-right: 0;
 }
 .dan-section .item .thumb{}
+.dan-section .item .thumb .xans-smart-banner-admin{
+margin-bottom: 0;}
 .dan-section .item .thumb img{}
 .dan-section .item .desc{}
+
+/* 1024px 이하에서 
+1. dan-section 일렬로 표시되고 문제1 브라우저 크기가 줄어들면 줄어드는 이미지 크기
+2. 화면에 모바일 1.2개 태블릿 2.2개
+3. 부드러운 스크롤링 */
+@media (max-width: 1024px){
+  /* .dan-section */
+  .dan-section .flex{
+    width: 100%;
+    overflow-x: auto;
+    /* 부드러운 스크롤링 css */
+    scroll-behavior: smooth;
+    /* scroll될 때 요소가 snap 타입*/
+    scroll-snap-type: x mandatory;
+
+  }
+  .dan-section .flex .item{
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+
+}
+@media(max-width: 768px){}
