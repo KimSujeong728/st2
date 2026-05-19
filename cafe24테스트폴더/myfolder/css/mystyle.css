@@ -1,18 +1,14 @@
 /* 테스트 후 삭제 */
 @import url(ub-variables.css);
-
-.card{
-  /* background-color: #cff;
+.ub-style{
+  background-color: #ccc;
+  border: 1px solid #000;
   box-sizing: border-box;
-  border: var(--border);
-  min-height: 300px;
-  opacity: 0.5; */
 }
-.dan-section .flex{
-  /* background-color: #f00;
-  box-sizing: border-box;
-  border: 1px solid #000; */
-  }
+/* ub-style 연속으로 나올때 동생에게 여백 */
+.ub-style + .ub-style{
+  margin-top: 50px;
+}
 
 
 /* 공통 */
@@ -41,6 +37,48 @@
 margin-bottom: 0;}
 .dan-section .item .thumb img{}
 .dan-section .item .desc{}
+
+/* .section.ub-style 스타일 */
+.ub-style.section_full{
+  /* 본인 브랜드 색상 적용하기 var(--section-bg) 권장 */
+  background-color: var(--section-bg);
+}
+.ub-style .ub-style-inner{}
+@media (min-width: 1024px){
+#contents > .section_full.ub-style .ub-style-inner {
+  max-width:1420px;
+  width:92%;
+  margin-left:auto;
+  margin-right:auto;
+}
+}
+/* .ub-style .main_title 한줄로 오게 만들기 */
+.ub-style .main_title{
+  /* display: flex; */
+}
+.ub-style .main_title.flex{
+  align-items: end;
+  justify-content: start;
+}
+.ub-style .main_title.flex .main_title_txt02{
+  margin-left: var(--space-xs);
+  margin-top: 0;
+}
+.ub-style .main_title .main_title_txt01{
+  /* font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000; */
+}
+.ub-style .main_title .main_title_txt02{
+  /* font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  color: #999; */
+  
+}
+
+/* 미디어쿼리 */
 
 /* 1024px 이하에서 
 1. dan-section 일렬로 표시되고 문제1 브라우저 크기가 줄어들면 줄어드는 이미지 크기
