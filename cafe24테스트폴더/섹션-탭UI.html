@@ -32,8 +32,9 @@
     <link rel="stylesheet" href="/layout/basic/css/ec-base-product.css" />
     <link rel="stylesheet" href="/layout/basic/css/ec-base-prdInfo.css" />
     <link rel="stylesheet" href="/layout/basic/css/ec-base-paginate.css" />
-		<!-- 섹션타이틀 + 탭메뉴를 위치 -->
+		<!-- 섹셕타이틀 + 탭메뉴를 위치 -->
 		<link rel="stylesheet" href="/layout/basic/css/main.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,6 +50,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
 
     <link rel="stylesheet" href="/layout/basic/css/swiper.min.css" />
     <!--@js(/layout/basic/js/swiper-bundle.min.js)-->
@@ -72,6 +74,7 @@
     <!--ez-favicon]-->
     <!--@js(/ez/init.js)-->
   </head>
+
   <body class="theme01" data-ez-theme="theme01">
     <div id="skipNavigation">
       <p><a href="#category">전체상품목록 바로가기</a></p>
@@ -80,18 +83,18 @@
     <div id="wrap">
       <!--@import(/layout/basic/header.html)-->
       <!--@import(/layout/basic/sidebar.html)-->
-      <div id="container" data-ez="layout-0h1e44o-1">
+      <div id="container" data-ez="layout-0p80der-1">
         <div id="contents">
-          <!-- 여기서 작업을 시작 -->
+          <!-- 여기서 작없을 시작 -->
           <!-- 너비를 다 차지하는 section -->
           <section class="section ub-style section_full">
             <div class="ub-style-inner">여기 컨텐트</div>
           </section>
           <!-- //.section -->
 
-          <!-- section 제목 테스트 제목이 row방향-->
+          <!--섹션 제목 테스트 제목이 row방향 -->
           <section class="section ub-style">
-            <!-- .main-title에 flex를 추가하면 한줄로, flex를 빼면 수직으로 -->
+            <!--.main_title  에 .flex를 추가하면 한줄로 flex 빼면 수직으로-->
             <div
               class="main_title ez-align-left main_title_direction_row"
               data-ez-role="ez-align"
@@ -99,17 +102,17 @@
             >
               <!-- 베스트셀러 타이틀 수정하는곳 -->
               <div class="main_title_txt01 test" data-ez-role="title">
-                메인 타이틀 영역
+                메인타이틀 영역
               </div>
               <div class="main_title_txt02" data-ez-role="subtitle">
-                서브 타이틀 영역
+                서브타이틀 영역
               </div>
             </div>
           </section>
 
-          <!-- section 제목 테스트 제목이 column방향-->
+          <!--섹션 제목 테스트 제목이 column-->
           <section class="section ub-style">
-            <!-- .main-title에 main_title_direction_column 추가 수직으로 -->
+            <!--.main_title  에 .main_title_direction_column 추가 수직으로-->
             <div
               class="main_title ez-align-left main_title_direction_column"
               data-ez-role="ez-align"
@@ -117,17 +120,17 @@
             >
               <!-- 베스트셀러 타이틀 수정하는곳 -->
               <div class="main_title_txt01 test" data-ez-role="title">
-                메인 타이틀 영역
+                메인타이틀 영역
               </div>
               <div class="main_title_txt02" data-ez-role="subtitle">
-                서브 타이틀 영역
+                서브타이틀 영역
               </div>
             </div>
           </section>
 
-          <!-- section 제목 + 탭메뉴-->
-           <!-- 탭방향 row -->
-          <section class="section ub-style main_product_category tab-direction-row">
+          <!--섹션 제목 + 탭메뉴 -->
+          <!-- 탭방향 row -->
+          <section class="section ub-style main_product_category tab-direction-row  tabmenu-2col">
             <div
               class="main_product_inner ez-align-left"
               data-ez-role="ez-align"
@@ -139,18 +142,19 @@
                   MD's 추천
                 </div>
                 <div class="main_title_txt02" data-ez-role="subtitle">
-                  기간한정 세일 상품을 만나보세요
+                  이번 시즌에 주목 받는 상품을 만나보세요
                 </div>
               </div>
               <!-- //main_title -->
 
               <ul class="main_product_tab" data-ez-role="tab-list">
-                <li data-ez-role="tab-item">
+                <li data-ez-role="tab-item" >
                   <button
                     type="button"
-                    class="button"
+                    class="button active"
                     data-id="tabContent1"
                     data-ez-role="name"
+                    data-name="26 SS 신상"
                   >
                     26 SS 신상
                   </button>
@@ -158,9 +162,10 @@
                 <li data-ez-role="tab-item">
                   <button
                     type="button"
-                    class="button active"
+                    class="button"
                     data-id="tabContent2"
                     data-ez-role="name"
+                    data-name="가디건"
                   >
                     가디건
                   </button>
@@ -171,16 +176,23 @@
                     class="button"
                     data-id="tabContent3"
                     data-ez-role="name"
+                    data-name="하객룩"
                   >
                     하객룩
                   </button>
                 </li>
-                <li data-ez-role="tab-item">
+
+                <li
+                  data-ez-role="tab-item"
+                  data-id="tabContent1775012440865"
+                  data-name="새로운 카테고리"
+                >
                   <button
                     type="button"
                     class="button"
-                    data-id="tabContent4"
+                    data-id="tabContent1775012440865"
                     data-ez-role="name"
+                    data-name="새로운 카테고리"
                   >
                     새로운 카테고리
                   </button>
@@ -188,16 +200,18 @@
               </ul>
             </div>
             <div class="content_list">
-              <div class="tabcontent active">탭컨텐츠1</div>
-              <div class="tabcontent">탭컨텐츠2</div>
+              <div class="tabcontent active ">탭컨텐츠1 </div>
+              <div class="tabcontent ">탭컨텐츠2</div>
               <div class="tabcontent">탭컨텐츠3</div>
               <div class="tabcontent">탭컨텐츠4</div>
             </div>
           </section>
+
           <!-- 탭방향 column -->
-          <section class="section ub-style main_product_category tab-direction-column">
+          <section class="section ub-style main_product_category tab-direction-column
+          main_product_inner_nowrap">
             <div
-              class="main_product_inner ez-align-left"
+              class="main_product_inner ez-align-left "
               data-ez-role="ez-align"
               data-ez-align="left"
             >
@@ -207,7 +221,7 @@
                   MD's 추천
                 </div>
                 <div class="main_title_txt02" data-ez-role="subtitle">
-                  기간한정 세일 상품을 만나보세요
+                  이번 시즌에 주목 받는 상품을 만나보세요
                 </div>
               </div>
               <!-- //main_title -->
@@ -216,9 +230,10 @@
                 <li data-ez-role="tab-item">
                   <button
                     type="button"
-                    class="button"
+                    class="button active"
                     data-id="tabContent1"
                     data-ez-role="name"
+                    data-name="26 SS 신상"
                   >
                     26 SS 신상
                   </button>
@@ -226,9 +241,10 @@
                 <li data-ez-role="tab-item">
                   <button
                     type="button"
-                    class="button active"
+                    class="button"
                     data-id="tabContent2"
                     data-ez-role="name"
+                    data-name="가디건"
                   >
                     가디건
                   </button>
@@ -239,16 +255,23 @@
                     class="button"
                     data-id="tabContent3"
                     data-ez-role="name"
+                    data-name="하객룩"
                   >
                     하객룩
                   </button>
                 </li>
-                <li data-ez-role="tab-item">
+
+                <li
+                  data-ez-role="tab-item"
+                  data-id="tabContent1775012440865"
+                  data-name="새로운 카테고리"
+                >
                   <button
                     type="button"
                     class="button"
-                    data-id="tabContent4"
+                    data-id="tabContent1775012440865"
                     data-ez-role="name"
+                    data-name="새로운 카테고리"
                   >
                     새로운 카테고리
                   </button>
@@ -256,8 +279,8 @@
               </ul>
             </div>
             <div class="content_list">
-              <div class="tabcontent active">탭컨텐츠1</div>
-              <div class="tabcontent">탭컨텐츠2</div>
+              <div class="tabcontent active ">탭컨텐츠1 </div>
+              <div class="tabcontent ">탭컨텐츠2</div>
               <div class="tabcontent">탭컨텐츠3</div>
               <div class="tabcontent">탭컨텐츠4</div>
             </div>
@@ -280,7 +303,7 @@
     <link rel="stylesheet" href="/layout/basic/css/add_theme03.css" />
     <link rel="stylesheet" href="/layout/basic/css/add_layout.css" />
 
-    <!--사용자 커스텀 css-->
+    <!-- 사용자 커스텀 css -->
     <link rel="stylesheet" href="/myfolder/css/ub-variables.css" />
     <link rel="stylesheet" href="/myfolder/css/ub-grid-system.css" />
     <link rel="stylesheet" href="/myfolder/css/mystyle.css" />
