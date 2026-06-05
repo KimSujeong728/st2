@@ -49,6 +49,7 @@ input, select, textarea, body, code, button {
 
 .dan-section .item {
   /* flex:none; */
+  position: relative;
 }
 
 /* 
@@ -60,6 +61,7 @@ input, select, textarea, body, code, button {
 .dan-section .flex .item[class*="col-"]{
   padding-left:0 ;
   padding-right: 0;
+
 }
 
 .dan-section .item .thumb {}
@@ -68,7 +70,18 @@ input, select, textarea, body, code, button {
 }
 
 .dan-section .item .thumb img{}
-.dan-section .item .desc {}
+.dan-section .item .desc {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  box-sizing: border-box;
+    /* display: block; */
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
 
 /* .section.ub-style 스타일 */
 .ub-style.section_full{
@@ -235,24 +248,41 @@ width:var(----tab-row-tabmenu-2col-width,24%);
 }
 
 
-
-
-.ub-style.main_product_category .main_product_inner .main_title{}
-.ub-style.main_product_category .main_product_inner .main_title .main_title_txt01{}
-.ub-style.main_product_category .main_product_inner .main_title .main_title_txt02{}
-.ub-style.main_product_category .main_product_inner .main_product_tab{}
-.ub-style.main_product_category .main_product_inner .main_product_tab li{}
-.ub-style.main_product_category .main_product_inner .main_product_tab li .button{}
-/* 선택된 메뉴 */
-.ub-style.main_product_category .main_product_inner .main_product_tab li.active .button{}
-.ub-style.main_product_category .main_product_inner .main_product_tab li .button.active{}
-
-/* 탭UI의 탭컨텐츠 컨테이너 */
-.ub-style.main_product_category .content_list{}
-.ub-style.main_product_category .content_list .tabcontent{}
-/* 선택된 탭컨텐츠 */
-.ub-style.main_product_category .content_list .tabcontent.active{}
-
+/* shortcut-section */
+.ub-style.shortcut-section{
+  --shortcut-item-count:8;
+}
+.ub-style .shortcut-list{
+  justify-content: center;
+}
+.ub-style .shortcut-item{
+  flex:0 0 auto;
+  width: calc(100% / var(--shortcut-item-count));
+   max-width: 100px;
+   min-width:80px;
+}
+.ub-style .shortcut-link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ub-style .shortcut-img{
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1;
+   border-radius: 50%;
+   overflow: hidden;
+}
+.ub-style .shortcut-img img{
+  display: block;
+  width:100%;
+  
+  object-fit: contain;
+  object-position: center;
+  
+}
+.ub-style .shortcut-title{}
 
 
 
@@ -278,9 +308,20 @@ width:var(----tab-row-tabmenu-2col-width,24%);
     /* 3 문제2 컨테이너와 아이템의 스크롤 snap 정렬 */
     scroll-snap-align: center;
   }
+
+  .ub-style .shortcut-list{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 }
 
 
 @media (max-width:768px){
-
+.ub-style .shortcut-item{
+  flex:0 1 auto;
+  width: calc(100% / var(--shortcut-item-count));
+   max-width: 100px;
+   min-width:80px;
+}
 }
