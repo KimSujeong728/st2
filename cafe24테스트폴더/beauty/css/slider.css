@@ -112,11 +112,11 @@
     overflow: hidden
   }
   .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
-    background-image: url(images/pause_48dp.png);
+    background-image: url(/beauty/images/pause_48dp.png);
     /* background-repeat: no-repeat; */
   }
   .visual-section .swiper-button .swiper-button-play-toggle .icon-play{
-    background-image: url(images/play_arrow_48dp.png);
+    background-image: url(/beauty/images/play_arrow_48dp.png);
     /* background-repeat: no-repeat; */
   }
   /* .is-play : pause표시
