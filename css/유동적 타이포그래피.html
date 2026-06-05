@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유동적 타이포그래피</title>
+  <!-- 웹폰트 -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+<!-- 
+
+.noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} -->
+
+<style>
+  *{margin: 0; padding: 0;}
+  body{margin: 50px;}
+
+  /* 타이포그래피 */
+  body, input, select, textarea{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    color: #333;
+  }
+  /* [class*="sample"]{
+    font-size: 2rem;
+    font-weight: 700;
+  } */
+
+  .sample1{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 1024px){
+    [class*="sample"]{
+    font-size: 1.5rem;
+  }
+  }
+  :root{
+    --min-font: 13;
+    --max-font: 18;
+    --min-font-section-title: 31;
+    --max-font-section-title: 18;
+    --min-width: 768;
+    --max-width: 1760;
+  }
+
+  /* 
+  .text {
+  font-size: clamp(
+    calc(var(--min-font) * 1px),
+    calc(
+      var(--min-font) * 1px +
+      (var(--max-font) - var(--min-font)) *
+      ((100vw - var(--min-width) * 1px) / (var(--max-width) - var(--min-width)))
+    ),
+    calc(var(--max-font) * 1px)
+  );
+} */
+
+  .sample2{
+   font-size: clamp(
+    calc(var(--min-font) * 1px),
+    calc(
+      var(--min-font) * 1px +
+      (var(--max-font) - var(--min-font)) *
+      ((100vw - var(--min-width) * 1px) / (var(--max-width) - var(--min-width)))
+    ),
+    calc(var(--max-font) * 1px)
+  );
+  }
+</style>
+</head>
+<body>
+  <div class="sample1">Summer Event</div>
+  <div class="sample2">Summer Event</div>
+</body>
+</html>
