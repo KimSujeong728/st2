@@ -36,7 +36,24 @@ input, select, textarea, body, code, button {
     /* font-family: "Pretendard Variable", Pretendard, Arial, sans-serif !important; */
 }
 
-
+.grid-section{}
+.grid-section .flex{
+  /* margin-right: 5px; */
+  gap: 20px;
+}
+.grid-section .item{
+  /* margin-right: 5px; */
+  /* flex: auto; */
+}
+.grid-section .flex > .item{
+  /* margin-right: 5px; */
+  flex: auto;
+}
+.card{
+  /* background-color: #ffc; */
+  box-sizing: border-box;
+  gap: 20px;
+}
 
 /* 단배너 CSS */
 /* 단배너 공통 */

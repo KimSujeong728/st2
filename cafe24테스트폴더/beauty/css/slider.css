@@ -60,7 +60,7 @@
   .visual-section .swiper-button{
     position: absolute;
     right: 0px;
-    opacity: 50%;
+    opacity: 100%;
     bottom: var(--swiper-control-position-bottom);
     transform: translate(0,50%);
   }
@@ -74,6 +74,7 @@
     height: 33px;
     position: relative;
     left: auto; right: auto; top: auto; bottom: auto;
+    margin-top: 20px;
   }
   .visual-section .swiper-button .swiper-button-prev,
   .visual-section .swiper-button .swiper-button-next{
@@ -88,8 +89,8 @@
     height: 50%;
     background-color: #ccc;
     position: absolute;
-    right: -3px; top: 43%;
-    transform: translate(0,-50%);
+    right: -3px; top: 37%;
+    transform: translate(0,-55%);
   }
 
   .visual-section .swiper-button .swiper-button-prev > img,
@@ -101,7 +102,10 @@
   .visual-section .swiper-button .swiper-button-next > img{
     transform: rotate(180deg);
   }
-  .visual-section .swiper-button .swiper-button-play-toggle{}
+  .visual-section .swiper-button .swiper-button-play-toggle{
+    position: relative;
+    right: 5px; bottom: 15px;
+  }
   .visual-section .swiper-button .swiper-button-play-toggle>span{
     display: block;
     padding-left: 100%;
@@ -109,7 +113,7 @@
     background-size: contain;
     /* box-sizing: border-box; */
     /* border: 1px solid #000; */
-    overflow: hidden
+    overflow: hidden;
   }
   .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
     background-image: url(/beauty/images/pause_48dp.png);
