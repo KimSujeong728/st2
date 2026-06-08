@@ -284,6 +284,27 @@ width:var(----tab-row-tabmenu-2col-width,24%);
 }
 .ub-style .shortcut-title{}
 
+/* override
+기존의 css를 무시하고 커스텀하는 방식 */
+.ec-base-product .prdList .thumbnail .likeButton::before {
+  content: none;
+}
+.ec-base-product .prdList .thumbnail .likeButton img {
+    display: block;
+}
+
+/* 카테고리 메뉴 해시태그 */
+.ec-base-tab.typeMenu li a.button{
+  border: 0 none;
+  background-color: #fff;
+}
+.ec-base-tab.typeMenu li a.button::before{
+  content: "#";
+  padding-right: 0px;
+  color: currentColor;
+  
+}
+
 
 
 /* 미디어쿼리 */
