@@ -22,7 +22,7 @@
   /* 레이아웃 변수 */
   --max-width: 1230px;
   --section-width: 92%;
-  --dan-space:15px;
+  --dan-space: 0px;
   
   /* 반응형 breakpoint */
   --breakpoint-sm: 480px;

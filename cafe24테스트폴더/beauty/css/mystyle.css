@@ -36,18 +36,36 @@ input, select, textarea, body, code, button {
     /* font-family: "Pretendard Variable", Pretendard, Arial, sans-serif !important; */
 }
 
-.grid-section{}
+
+/* grid 시스템 섹션 */
+.section .grid-section{
+  aspect-ratio: 16/9;
+}
 .grid-section .flex{
   /* margin-right: 5px; */
-  gap: 20px;
+  gap: 0px;
+  /* height: auto; */
+}
+.grid-section >div .thumb img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.grid-section .thumb{
+  height: 100%;
+  font-size: 0;
+}
+.grid-section .flex > .item{
+  /* margin-right: 5px; */
+  flex: 1 1 auto;
+  /* height: auto; */
 }
 .grid-section .item{
   /* margin-right: 5px; */
   /* flex: auto; */
-}
-.grid-section .flex > .item{
-  /* margin-right: 5px; */
-  flex: auto;
 }
 .card{
   /* background-color: #ffc; */
