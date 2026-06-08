@@ -5,26 +5,26 @@
 }
 /* .ub-style 연속으로 나올때 동생에게 여백 */
 .ub-style + .ub-style{
-  margin-top:50px;
+  margin-top: 10px;
 }
 /* 탭 최상위 container  */
 .ub-style.main_product_category{
   box-sizing: border-box;
-  border: 1px solid #000;
-  background-color: #cff;
+  /* border: 1px solid #000; */
+  background-color: rgb(233, 233, 233);
 }
 /*(탭메뉴버튼과 섹션타이틀) 의 컨테이너 */
 .ub-style.main_product_category .main_product_inner{
    box-sizing: border-box;
-  border: 1px solid #000;
-  background-color: #fcf;
+  /* border: 1px solid #000; */
+  /* background-color: #fcf; */
 }
 
 /* 탭UI의 탭컨텐츠 컨테이너 */
 .ub-style.main_product_category .content_list{
      box-sizing: border-box;
-  border: 1px solid #000;
-  background-color: #ffc;
+  /* border: 1px solid #000; */
+  /* background-color: #ffc; */
 }
 
 
@@ -358,9 +358,10 @@ product-listmain xans-product-listmain
  .ub-style .ec-base-product .prdList > li{
    width: 16.66%;
    vertical-align: bottom;
+   
   }
   .ub-style .ec-base-product .prdList > li:nth-child(1){
-    width: 50%;
+    width: 35%;
   }
   .ub-style .ec-base-product .prdList > li:nth-child(1) .description{
     display: none;

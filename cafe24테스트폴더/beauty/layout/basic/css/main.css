@@ -17,7 +17,7 @@
 /* 이미지&텍스트갤러리 */
 .main_image_text_gallery {margin:0 auto 120px;width:92%;padding:0;}
 .main_image_text_gallery .main_title {margin-bottom:40px;}
-.main_image_text_gallery .main_3dan_banner ul {display:flex;justify-content:flex-start;flex-wrap:wrap;margin:0 -10px;}
+.main_image_text_gallery .main_3dan_banner ul {display:flex;justify-content:center;flex-wrap:wrap;margin:0 auto;}
 .main_image_text_gallery .main_3dan_banner ul li {margin:0 0 30px;flex:1;max-width:416px;box-sizing:border-box;padding:0 10px;}
 .main_image_text_gallery .main_3dan_banner ul.ez-column-1 {flex-direction:column;align-items:center;}
 .main_image_text_gallery .main_3dan_banner ul.ez-column-2 {width:calc(66.66% + 13px);margin:0 auto;}
