@@ -1,0 +1,28 @@
+/* 옵션 행: 제목 + 셀렉트박스 한 줄 배치 */
+.xans-product-detail .xans-product-option tr {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 16px;
+}
+
+/* th(옵션 제목) 너비 고정 */
+.xans-product-detail .xans-product-option th {
+    display: flex !important;
+    align-items: center;
+    flex-shrink: 0;
+    width: 80px;       /* 필요에 따라 조정 */
+    padding: 12px 0 !important;
+}
+
+/* td(셀렉트박스 영역) 나머지 공간 채우기 */
+.xans-product-detail .xans-product-option td {
+    display: flex !important;
+    align-items: center;
+    flex: 1;
+    padding: 12px 0 !important;
+}
+
+.xans-product-detail .xans-product-option td select {
+    width: 100%;
+}
